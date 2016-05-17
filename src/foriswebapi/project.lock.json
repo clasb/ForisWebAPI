@@ -3,6 +3,36 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "Auth0/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.11",
+          "RestSharp": "104.1.0"
+        },
+        "compile": {
+          "lib/Auth0.dll": {}
+        },
+        "runtime": {
+          "lib/Auth0.dll": {}
+        }
+      },
+      "Auth0-ASPNET/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Auth0": "1.4.0",
+          "WebActivatorEx": "2.0.1"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.IdentityModel.Services"
+        ],
+        "compile": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        }
+      },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -1339,6 +1369,15 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -1346,6 +1385,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RestSharp/104.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net4/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net4/RestSharp.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -1557,6 +1605,18 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "WebActivatorEx/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net40/WebActivatorEx.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebActivatorEx.dll": {}
         }
       }
     },
@@ -3677,6 +3737,36 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
+      "Auth0/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.11",
+          "RestSharp": "104.1.0"
+        },
+        "compile": {
+          "lib/Auth0.dll": {}
+        },
+        "runtime": {
+          "lib/Auth0.dll": {}
+        }
+      },
+      "Auth0-ASPNET/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Auth0": "1.4.0",
+          "WebActivatorEx": "2.0.1"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.IdentityModel.Services"
+        ],
+        "compile": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        }
+      },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -5016,6 +5106,15 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -5023,6 +5122,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RestSharp/104.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net4/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net4/RestSharp.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -5235,9 +5343,51 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "WebActivatorEx/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net40/WebActivatorEx.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebActivatorEx.dll": {}
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
+      "Auth0/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.11",
+          "RestSharp": "104.1.0"
+        },
+        "compile": {
+          "lib/Auth0.dll": {}
+        },
+        "runtime": {
+          "lib/Auth0.dll": {}
+        }
+      },
+      "Auth0-ASPNET/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Auth0": "1.4.0",
+          "WebActivatorEx": "2.0.1"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.IdentityModel.Services"
+        ],
+        "compile": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        }
+      },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -6577,6 +6727,15 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -6584,6 +6743,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RestSharp/104.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net4/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net4/RestSharp.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -6795,6 +6963,18 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "WebActivatorEx/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net40/WebActivatorEx.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebActivatorEx.dll": {}
         }
       }
     },
@@ -11850,6 +12030,35 @@
     }
   },
   "libraries": {
+    "Auth0/1.4.0": {
+      "type": "package",
+      "sha512": "bFzqg0iMgyyWKPWDjhYTRBQ1s+O6sCVr0yXt0JTkG/sh4gJJ35UYRBOK5XyWrvEhRKELt0pnC6E2T8LVcCtqXw==",
+      "files": [
+        "Auth0.1.4.0.nupkg",
+        "Auth0.1.4.0.nupkg.sha512",
+        "Auth0.nuspec",
+        "lib/Auth0.dll"
+      ]
+    },
+    "Auth0-ASPNET/1.4.0": {
+      "type": "package",
+      "sha512": "9FMSgi7NDImlJ0fv4fb6YV8YdhQiHlNQRQkPtLFKiPruqF/Y7S70vxGCs5ueNVp7NndB9iL8HVQAfybYyrp4qA==",
+      "files": [
+        "Auth0-ASPNET.1.4.0.nupkg",
+        "Auth0-ASPNET.1.4.0.nupkg.sha512",
+        "Auth0-ASPNET.nuspec",
+        "content/net/App_Start/SessionAuthenticationConfig.cs.pp",
+        "content/net/LoginCallback.ashx.cs.pp",
+        "content/net/LoginCallback.ashx.pp",
+        "content/net/web.config.install.xdt",
+        "content/net45/App_Start/SessionAuthenticationConfig.cs.pp",
+        "content/net45/LoginCallback.ashx.cs.pp",
+        "content/net45/LoginCallback.ashx.pp",
+        "content/net45/web.config.install.xdt",
+        "lib/net/Auth0.AspNet.dll",
+        "lib/net45/Auth0.AspNet.dll"
+      ]
+    },
     "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -12944,6 +13153,16 @@
         "Microsoft.Net.Http.Headers.nuspec"
       ]
     },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "type": "package",
+      "sha512": "FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "files": [
+        "lib/net40/Microsoft.Web.Infrastructure.dll",
+        "Microsoft.Web.Infrastructure.1.0.0.nupkg",
+        "Microsoft.Web.Infrastructure.1.0.0.nupkg.sha512",
+        "Microsoft.Web.Infrastructure.nuspec"
+      ]
+    },
     "Microsoft.Win32.Primitives/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -13022,6 +13241,28 @@
         "Newtonsoft.Json.6.0.6.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "RestSharp/104.1.0": {
+      "type": "package",
+      "sha512": "dlimMbhHZ7T2saCYJDcuonz7XSpnUUAe7RxN1O5ETi7xPnfAwA20Uf5Iy9XYOm+tV4FLM0GIQiVFxkjR7NJI8A==",
+      "files": [
+        "lib/net35/RestSharp.dll",
+        "lib/net35/RestSharp.xml",
+        "lib/net35-client/RestSharp.dll",
+        "lib/net35-client/RestSharp.xml",
+        "lib/net4/RestSharp.dll",
+        "lib/net4/RestSharp.xml",
+        "lib/net4-client/RestSharp.dll",
+        "lib/net4-client/RestSharp.xml",
+        "lib/sl4/RestSharp.Silverlight.dll",
+        "lib/sl4/RestSharp.Silverlight.xml",
+        "lib/sl4-wp71/RestSharp.WindowsPhone.dll",
+        "lib/sl4-wp71/RestSharp.WindowsPhone.xml",
+        "readme.txt",
+        "RestSharp.104.1.0.nupkg",
+        "RestSharp.104.1.0.nupkg.sha512",
+        "RestSharp.nuspec"
       ]
     },
     "runtime.any.System.Linq.Expressions/4.0.11-beta-23516": {
@@ -16710,6 +16951,16 @@
         "System.Xml.XDocument.4.0.11-beta-23516.nupkg.sha512",
         "System.Xml.XDocument.nuspec"
       ]
+    },
+    "WebActivatorEx/2.0.1": {
+      "type": "package",
+      "sha512": "JTLut1GxqnnyscJl4duPd8tBRYHRdcn7sk3slx7Iwu+XOktdZQK6XpohMomPf+aXv5LTXu4+p0RercZH9ldKFg==",
+      "files": [
+        "lib/net40/WebActivatorEx.dll",
+        "WebActivatorEx.2.0.1.nupkg",
+        "WebActivatorEx.2.0.1.nupkg.sha512",
+        "WebActivatorEx.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -16724,7 +16975,9 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final"
     ],
-    "DNX,Version=v4.5.1": [],
+    "DNX,Version=v4.5.1": [
+      "Auth0-ASPNET >= 1.4.0"
+    ],
     "DNXCore,Version=v5.0": []
   }
 }
