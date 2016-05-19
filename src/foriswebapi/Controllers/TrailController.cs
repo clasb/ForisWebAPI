@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using foriswebapi.Models;
 using foriswebapi.Models.Interfaces;
+using Microsoft.AspNet.Authorization;
 
 namespace foriswebapi.Controllers
 {
@@ -15,6 +16,7 @@ namespace foriswebapi.Controllers
         private ITrailsRepository Trails { get; set; }
 
         [HttpGet]
+        [Authorize(ActiveAuthenticationSchemes = "Bearer")]
         [Route("/trails")]
         public IActionResult GetAllTrails()
         {
@@ -34,6 +36,7 @@ namespace foriswebapi.Controllers
         }
 
         [HttpGet]
+        [Authorize(ActiveAuthenticationSchemes = "Bearer")]
         [Route("/trails")]
         public IActionResult GetTrailsInProximity(long latitude, long longitude, int radius)
         {
@@ -53,6 +56,7 @@ namespace foriswebapi.Controllers
         }
 
         [HttpGet]
+        [Authorize(ActiveAuthenticationSchemes = "Bearer")]
         [Route("/trail")]
         public IActionResult GetTrailOnId(string id)
         {
@@ -72,6 +76,7 @@ namespace foriswebapi.Controllers
         }
 
         [HttpPost]
+        [Authorize(ActiveAuthenticationSchemes = "Bearer")]
         [Route("/trail")]
         public IActionResult AddTrail([FromBody]Trail trail)
         {
@@ -91,6 +96,7 @@ namespace foriswebapi.Controllers
         }
 
         [HttpPut]
+        [Authorize(ActiveAuthenticationSchemes = "Bearer")]
         [Route("/trail")]
         public IActionResult UpdateTrail(string id, [FromBody]Trail trail)
         {
@@ -110,6 +116,7 @@ namespace foriswebapi.Controllers
         }
 
         [HttpDelete]
+        [Authorize(ActiveAuthenticationSchemes = "Bearer")]
         [Route("/delete")]
         public IActionResult DeleteTrail(string id)
         {

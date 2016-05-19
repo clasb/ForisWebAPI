@@ -56,7 +56,6 @@ namespace foriswebapi
                 options.Authority = $"https://{settings.Value.Domain}";
                 options.AutomaticChallenge = true;
                 options.AutomaticAuthenticate = true;
-                //options.MetadataAddress = "https://claes.eu.auth0.com/wsfed/n7KZAN5t3dIwXuWlaViTLF9ZJ1esnRsI/FederationMetadata/2007-06/FederationMetadata.xml";
                 options.TokenValidationParameters.IssuerSigningKey = new X509SecurityKey(certificate);
                 options.Events = new JwtBearerEvents
                 {
