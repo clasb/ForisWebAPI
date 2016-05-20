@@ -10,7 +10,9 @@ namespace foriswebapi.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public int Length { get; set; } 
         public decimal Rating { get; set; }
+        public decimal Difficulty { get; set; }
         public IEnumerable<Coordinate> Coordinates { get; set; }
     }
 }

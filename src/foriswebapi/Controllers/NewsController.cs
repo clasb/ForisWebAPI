@@ -9,11 +9,12 @@ using Microsoft.AspNet.Authorization;
 
 namespace foriswebapi.Controllers
 {
+    [Route("api/")]
     public class NewsController : Controller
     {
         [HttpGet]
         [Authorize(ActiveAuthenticationSchemes = "Bearer")]
-        [Route("api/nonsecret")]
+        [Route("news")]
         public ActionResult GetNews()
         {
             return Ok("hej");
@@ -21,7 +22,7 @@ namespace foriswebapi.Controllers
 
         [HttpGet]
         [Authorize(ActiveAuthenticationSchemes = "Bearer")]
-        [Route("api/secret")]
+        [Route("news9")]
         public ActionResult GetNews(int id)
         {
             return Ok(User.Claims.Select(c => new { c.Type, c.Value }));

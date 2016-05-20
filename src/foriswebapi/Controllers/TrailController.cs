@@ -9,15 +9,18 @@ using Microsoft.AspNet.Authorization;
 
 namespace foriswebapi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/")]
     public class TrailController : Controller
     {
-        [FromServices]
-        private ITrailsRepository Trails { get; set; }
+        private readonly ITrailsRepository Trails;
+        public TrailController(ITrailsRepository trails)
+        {
+            Trails = trails;
+        }
 
         [HttpGet]
         [Authorize(ActiveAuthenticationSchemes = "Bearer")]
-        [Route("/trails")]
+        [Route("alltrails")]
         public IActionResult GetAllTrails()
         {
             try
@@ -29,7 +32,7 @@ namespace foriswebapi.Controllers
                 }
                 return this.Ok(trails);
             }
-            catch
+            catch (Exception e)
             {
                 return HttpBadRequest();
             }
@@ -37,7 +40,7 @@ namespace foriswebapi.Controllers
 
         [HttpGet]
         [Authorize(ActiveAuthenticationSchemes = "Bearer")]
-        [Route("/trails")]
+        [Route("trails")]
         public IActionResult GetTrailsInProximity(long latitude, long longitude, int radius)
         {
             try
@@ -57,7 +60,7 @@ namespace foriswebapi.Controllers
 
         [HttpGet]
         [Authorize(ActiveAuthenticationSchemes = "Bearer")]
-        [Route("/trail")]
+        [Route("trail")]
         public IActionResult GetTrailOnId(string id)
         {
             try
@@ -77,7 +80,7 @@ namespace foriswebapi.Controllers
 
         [HttpPost]
         [Authorize(ActiveAuthenticationSchemes = "Bearer")]
-        [Route("/trail")]
+        [Route("trail")]
         public IActionResult AddTrail([FromBody]Trail trail)
         {
             try
@@ -97,7 +100,7 @@ namespace foriswebapi.Controllers
 
         [HttpPut]
         [Authorize(ActiveAuthenticationSchemes = "Bearer")]
-        [Route("/trail")]
+        [Route("trail")]
         public IActionResult UpdateTrail(string id, [FromBody]Trail trail)
         {
             try
@@ -117,7 +120,7 @@ namespace foriswebapi.Controllers
 
         [HttpDelete]
         [Authorize(ActiveAuthenticationSchemes = "Bearer")]
-        [Route("/delete")]
+        [Route("trail")]
         public IActionResult DeleteTrail(string id)
         {
             try

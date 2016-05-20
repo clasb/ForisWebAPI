@@ -14,6 +14,8 @@ using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.Extensions.OptionsModel;
 using System.Security.Cryptography.X509Certificates;
 using System.IdentityModel.Tokens;
+using foriswebapi.Models.Interfaces;
+using foriswebapi.Models;
 
 namespace foriswebapi
 {
@@ -34,6 +36,7 @@ namespace foriswebapi
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddSingleton<ITrailsRepository, TrailsRepository>();
             services.Configure<Auth0Settings>(Configuration.GetSection("Auth0"));
             services.AddMvc();
         }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace foriswebapi.Models.Interfaces
 {
-    interface ITrailsRepository
+    public interface ITrailsRepository
     {
         IEnumerable<Trail> GetAllTrails();
         IEnumerable<Trail> GetTrails(long latitude, long longitude, int radius);
