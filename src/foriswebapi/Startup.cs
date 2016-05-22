@@ -35,6 +35,7 @@ namespace foriswebapi
         {
             services.AddScoped<ITrailsRepository, TrailsRepository>();
             services.Configure<Auth0Settings>(Configuration.GetSection("Auth0"));
+            services.AddCors();
             services.AddMvc();
         }
         
@@ -43,14 +44,14 @@ namespace foriswebapi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             var logger = loggerFactory.CreateLogger("Auth0");
-
+            
             var settings = app.ApplicationServices.GetService<IOptions<Auth0Settings>>();
 
             var certificateData = settings.Value.CertificateData;
             var certificate = new X509Certificate2(Convert.FromBase64String(certificateData));
 
             app.UseJwtBearerAuthentication(options =>
-            {
+            {   
                 options.Audience = settings.Value.ClientId;
                 options.Authority = $"https://{settings.Value.Domain}";
                 options.AutomaticChallenge = true;
@@ -76,6 +77,8 @@ namespace foriswebapi
                     }
                 };
             });
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").WithMethods("GET", "POST", "PUT", "DELETE").WithHeaders("Authorization"));
 
             app.UseIISPlatformHandler();
 
