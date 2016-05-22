@@ -23,7 +23,6 @@ namespace foriswebapi
     {
         public Startup(IHostingEnvironment env)
         {
-            // Set up configuration sources.
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables();
@@ -31,17 +30,14 @@ namespace foriswebapi
         }
 
         public IConfigurationRoot Configuration { get; set; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddSingleton<ITrailsRepository, TrailsRepository>();
+            services.AddScoped<ITrailsRepository, TrailsRepository>();
             services.Configure<Auth0Settings>(Configuration.GetSection("Auth0"));
             services.AddMvc();
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
@@ -87,8 +83,7 @@ namespace foriswebapi
 
             app.UseMvc();
         }
-
-        // Entry point for the application.
+        
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }

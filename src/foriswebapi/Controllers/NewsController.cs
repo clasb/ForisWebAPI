@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Authorization;
+using System.Security.Claims;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,7 +18,17 @@ namespace foriswebapi.Controllers
         [Route("news")]
         public ActionResult GetNews()
         {
-            return Ok("hej");
+            var identity = User.Identity as ClaimsIdentity;
+
+            var claims = from c in identity.Claims
+                         select new
+                         {
+                             subject = c.Subject.Name,
+                             type = c.Type,
+                             value = c.Value
+                         };
+
+            return Ok(claims);
         }
 
         [HttpGet]
