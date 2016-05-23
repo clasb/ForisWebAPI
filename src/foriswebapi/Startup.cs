@@ -78,7 +78,7 @@ namespace foriswebapi
                 };
             });
 
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").WithMethods("GET", "POST", "PUT", "DELETE").WithHeaders("Authorization"));
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200", "http://clasb.github.io/foriswebapp/", "http://clasb.github.io").WithMethods("GET", "POST", "PUT", "DELETE").WithHeaders("Authorization"));
 
             app.UseIISPlatformHandler();
 

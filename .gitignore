@@ -3,3 +3,7 @@ src/foriswebapi/appsettings.json
 src/foriswebapi/appsettings.json
 src/foriswebapi/appsettings.json
 src/foriswebapi/appsettings.json
+src/foriswebapi/Properties/PublishProfiles/forisapi - Web Deploy-publish.ps1
+src/foriswebapi/Properties/PublishProfiles/forisapi - Web Deploy.pubxml.user
+src/foriswebapi/appsettings.json
+src/foriswebapi/foriswebapi.xproj.user

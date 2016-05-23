@@ -6,8 +6,6 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Authorization;
 using System.Security.Claims;
 
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace foriswebapi.Controllers
 {
     [Route("api/")]
